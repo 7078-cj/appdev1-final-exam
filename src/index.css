@@ -377,7 +377,6 @@ form button {
         box-shadow: 0 0 5px lightgray;
     }
 }
-
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
 }
