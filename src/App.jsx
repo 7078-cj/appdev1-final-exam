@@ -16,8 +16,8 @@ function App() {
       <ThemeProvider>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/todos' element={<Todos/>}/>
+          <Route path='/appdev1-final-exam/login' element={<Login/>}/>
+          <Route path='/appdev1-final-exam/todos' element={<Todos/>}/>
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
