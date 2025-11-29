@@ -1,12 +1,14 @@
 import { useDispatch } from "react-redux";
 import { deleteTodo, updateTodo } from "../features/todos/todosSlice";
-import { useContext } from "react";
+import { useContext, useState, useRef } from "react";
 import { ThemeContext } from "../ThemeContext";
 import '../index.css'; // adjust path if needed
 
 export default function TodoItem({ todo }) {
   const dispatch = useDispatch();
   const { theme } = useContext(ThemeContext);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const todoRef = useRef(null);
 
   // Theme classes
   const todoClass = {
@@ -26,11 +28,20 @@ export default function TodoItem({ todo }) {
   };
 
   const removeTodo = () => {
-    dispatch(deleteTodo(todo.id));
+    // Add the "fall" animation class
+    setIsDeleting(true);
+
+    // Wait for animation to finish before deleting
+    setTimeout(() => {
+      dispatch(deleteTodo(todo.id));
+    }, 500); // Match the 0.5s transition duration in your CSS
   };
 
   return (
-    <div className={todoClass}>
+    <div
+      ref={todoRef}
+      className={`${todoClass} ${isDeleting ? "fall" : ""}`}
+    >
       <li className={todo.completed ? "completed" : ""}>{todo.title}</li>
       <button className={buttonClass} onClick={toggleComplete}>
         <i className="fas fa-check"></i>
