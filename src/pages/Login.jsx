@@ -36,7 +36,7 @@ function Login() {
     }
 
     localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
-    nav("/appdev1-final-exam/todos");
+    nav("/todos");
   };
 
   return (

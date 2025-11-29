@@ -12,15 +12,16 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <BrowserRouter basename="/appdev1-final-exam">
-      <ThemeProvider>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/appdev1-final-exam/login' element={<Login/>}/>
-          <Route path='/appdev1-final-exam/todos' element={<Todos/>}/>
-        </Routes>
-      </ThemeProvider>
-    </BrowserRouter>
+   <BrowserRouter basename="/appdev1-final-exam">
+    <ThemeProvider>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/todos' element={<Todos />} />
+      </Routes>
+    </ThemeProvider>
+  </BrowserRouter>
+
   )
 }
 
