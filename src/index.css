@@ -51,11 +51,14 @@ body {
 
 /* Theme buttons div */
 .flexrow-container {
-    align-items: center;
-    align-self: flex-end;
+    position: absolute;      /* Make it absolute relative to the nearest positioned ancestor (or body) */
+    top: 1rem;               /* Distance from the top of the screen */
+    right: 1rem;             /* Distance from the right of the screen */
     display: flex;
+    align-items: center;
     justify-content: space-around;
-    margin-right: 3%;
+    margin: 0;               /* remove margin-right since we are positioning absolutely */
+    z-index: 1000;           /* ensures it appears above other elements */
 }
 
 .theme-selector {

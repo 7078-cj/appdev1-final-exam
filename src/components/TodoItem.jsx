@@ -2,8 +2,7 @@ import { useDispatch } from "react-redux";
 import { deleteTodo, updateTodo } from "../features/todos/todosSlice";
 import { useContext } from "react";
 import { ThemeContext } from "../ThemeContext";
-
- // adjust path if needed
+import '../index.css'; // adjust path if needed
 
 export default function TodoItem({ todo }) {
   const dispatch = useDispatch();
@@ -17,9 +16,9 @@ export default function TodoItem({ todo }) {
   }[theme];
 
   const buttonClass = {
-    standard: "button standard-button",
-    light: "button light-button",
-    darker: "button darker-button",
+    standard: "check-btn standard-button",
+    light: "check-btn light-button",
+    darker: "check-btn darker-button",
   }[theme];
 
   const toggleComplete = () => {
@@ -33,12 +32,13 @@ export default function TodoItem({ todo }) {
   return (
     <div className={todoClass}>
       <li className={todo.completed ? "completed" : ""}>{todo.title}</li>
-
       <button className={buttonClass} onClick={toggleComplete}>
         <i className="fas fa-check"></i>
       </button>
-
-      <button className={buttonClass} onClick={removeTodo}>
+      <button
+        className={buttonClass.replace("check-btn", "delete-btn")}
+        onClick={removeTodo}
+      >
         <i className="fas fa-trash"></i>
       </button>
     </div>

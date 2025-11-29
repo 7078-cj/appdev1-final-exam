@@ -25,7 +25,7 @@ export default function AddTodoForm() {
     e.preventDefault();
     if (!text.trim()) return alert("You must write something!");
 
-    dispatch(addTodo({ title: text, completed: false }));
+    dispatch(addTodo({userId: 1, title: text, completed: false }));
     setText("");
   };
 

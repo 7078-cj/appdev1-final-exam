@@ -17,9 +17,11 @@ const {theme, setTheme} = useContext(ThemeContext)
 
   // apply theme
 
+  var dt = new Date();
+  const formatted = dt.toLocaleString(); 
 
   return (
-  <>
+  <div style={{ width:"100%" }}>
   <meta charSet="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#062e3f" />
@@ -43,7 +45,7 @@ const {theme, setTheme} = useContext(ThemeContext)
   <link rel="stylesheet" href="CSS/main.css" />
   <link rel="stylesheet" href="CSS/corner.css" />
   <title>JUST DO IT</title>
-  <div id="header">
+  <div id="header" style={{ width:"100%" }}>
     
         <div className="flexrow-container">
           <div
@@ -64,17 +66,10 @@ const {theme, setTheme} = useContext(ThemeContext)
       <div id="border" />
     </h1>
   </div>
-  {/* <div id="form">
-    <form>
-      <input className="todo-input" type="text" placeholder="Add a task." />
-      <button className="todo-btn" type="submit">
-        I Got This!
-      </button>
-    </form>
-  </div> */}
+
   <AddTodoForm/>
   {/* div for top left corner */}
-  <div className="version">
+  <div className="version" style={{ width:"100%" }}>
     <div className="demo version-section">
       <a
         href="https://github.com/lordwill1/todo-list"
@@ -109,13 +104,17 @@ const {theme, setTheme} = useContext(ThemeContext)
         </svg>
       </a>
     </div>
-    <div>
-      <p>
-        <span id="datetime" />
-      </p>
-    </div>
+    <div >
+        <span id="datetime" style={{
+        display: "flex",
+        justifyContent: "center", // horizontal centering
+        alignItems: "center",     // vertical centering
+        width: "100%",
+        
+        }}>{formatted}</span>
+        </div>
     <div id="myUnOrdList">
-      <ul className="todo-list">
+      <ul className="todo-list" style={{ display: "flex",  justifyItems:"center", alignItems:"center", flexDirection:"column" }}>
         {/* (Basic Format)
       <div class="todo">
           items added to this list:
@@ -127,6 +126,6 @@ const {theme, setTheme} = useContext(ThemeContext)
       </ul>
     </div>
   </div>
-</>
+</div>
   );
 }
