@@ -12,7 +12,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/appdev1-final-exam">
       <ThemeProvider>
         <Routes>
           <Route path='/' element={<Home/>}/>
